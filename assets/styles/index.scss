@@ -1,1 +1,46 @@
 @import '~bootstrap/scss/bootstrap';
+
+$accent-border-color: solid red;
+
+h1 {
+   text-align: center;
+   margin: 50px 0 75px 0;
+}
+
+.row {
+    justify-content: center;
+}
+
+.row1 {
+    padding: 25px;
+    border-right: 3px $accent-border-color;
+    border-bottom: 3px $accent-border-color;
+}
+
+.row1-3 {
+    padding: 25px;
+    border-bottom: 3px $accent-border-color;
+}
+
+.row2 {
+    padding: 25px;
+    border-bottom: 3px $accent-border-color;
+    border-top: 3px $accent-border-color;
+    border-right: 3px $accent-border-color;
+}
+
+.row2-3 {
+    padding: 25px;
+    border-bottom: 3px $accent-border-color;
+}
+
+.row3 {
+    padding: 25px;
+    border-top: 3px $accent-border-color;
+    border-right: 3px $accent-border-color;
+}
+
+.row3-3 {
+    padding: 25px;
+    border-top: 3px $accent-border-color;
+}
