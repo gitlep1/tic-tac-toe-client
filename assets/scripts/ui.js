@@ -2,7 +2,7 @@
 const store = require('./store')
 
 const signUpSuccess =  (response)  => {
-  $('#message').text('You have successfully signed up! ' + '\nWELCOME!' + response.user.email)
+  $('#message').text('You have successfully signed up! ' + 'WELCOME! ' + response.user.email)
 }
 
 const signUpFailure =  () => {
@@ -10,7 +10,7 @@ const signUpFailure =  () => {
 }
 
 const signInSuccess =  (response) => {
-  $('#message').text('You have been successfully signed in ' + 'Your token is: ' + response.user)
+  $('#message').text('You have been successfully signed in ' + response.user.email)
   store.user = response.user
 }
 
@@ -19,7 +19,7 @@ const signInFailure =  () => {
 }
 
 const signOutSuccess =  (response) => {
-    $('#message').text('You have been signed out')
+    $('#message').text('You have been successfully signed out')
 }
   
 const signOutFailure =  () => {

@@ -33,9 +33,9 @@ const onSignOut = (event) => {
   const form = event.target
   const data = getFormFields(form)
   
-  api.SignOut(data)
-    .then(ui.SignOutSuccess)
-    .catch(ui.SignOutFailure)
+  api.signOut(data)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
 }
 
 const onPasswordChange = (event) => {

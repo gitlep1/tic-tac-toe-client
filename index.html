@@ -12,20 +12,52 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <form id="sign-up" class="border">
+        <fieldset>
+          <legend>Sign up</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input type="submit" value="Sign up">
+        </fieldset>
+      </form>
+    
+      <form id="sign-in" class="border">
+        <fieldset>
+          <legend>Sign in</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" value="Sign in">
+        </fieldset>
+      </form>
+    
+      <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" value="Change Password">
+        </fieldset>
+      </form>
       <h1>Tic-Tac-Toe</h1>
-      <div class="container">
-        <section class="row">
-          <div class="col-4 row1"> </div>
-          <div class="col-4 row1"> </div>
-          <div class="col-4 row1-3"> </div>
-          <div class="col-4 row2"> </div>
-          <div class="col-4 row2"> </div>
-          <div class="col-4 row2-3"> </div>
-          <div class="col-4 row3"> </div>
-          <div class="col-4 row3"> </div>
-          <div class="col-4 row3-3"> </div>
-        </section>
-        <button id="sign-out">Sign Out</button>
+      <p id='message'></p>
+        <section class='container'>
+     
+        <div class='row board h-100'>
+        
+        <div class='col-4 box'></div>
+        <div class='col-4 box'></div>
+        <div class='col-4 box'></div>
+
+        <div class='col-4 box'></div>
+        <div class='col-4 box'></div>
+        <div class='col-4 box'></div>
+
+        <div class='col-4 box'></div>
+        <div class='col-4 box'></div>
+        <div class='col-4 box'></div>
       </div>
+    </section>
+        <button id="sign-out">Sign Out</button>
     </body>
 </html>
