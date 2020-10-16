@@ -6,6 +6,9 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
+const events = require('./events')
 $(() => {
-  // your JS code goes here
-})
+  $('#sign-up-form').on('submit', events.onSignUp)
+  $('#sign-in').on('submit', events.onSignIn)
+  $('#password-change').on('submit', events.onPasswordChange)
+  $('#sign-out').on('click', events.onSignOut)})

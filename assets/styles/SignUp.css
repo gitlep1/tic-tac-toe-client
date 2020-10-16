@@ -1,0 +1,19 @@
+.border {
+  border: 3px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* button {
+  display: flex;
+  text-align: center;
+  margin: 25px;
+} */
+
+#sign-out {
+  /* margin: 0 450px; */
+}

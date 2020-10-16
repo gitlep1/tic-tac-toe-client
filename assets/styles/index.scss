@@ -1,37 +1,45 @@
 @import '~bootstrap/scss/bootstrap';
 
 $accent-border-color: solid red;
+$text-color: cyan;
+
+body {
+    background-image: url('http://i.stack.imgur.com/kx8MT.gif');
+    background-size: cover;
+}
 
 h1 {
    text-align: center;
    margin: 50px 0 75px 0;
+   color: $text-color;
 }
 
 .row {
     justify-content: center;
+    text-align: center;
 }
 
 .row1 {
     padding: 25px;
+    // margin: 0 0 0 0;
+    width: 15px;
     border-right: 3px $accent-border-color;
-    border-bottom: 3px $accent-border-color;
 }
 
 .row1-3 {
     padding: 25px;
-    border-bottom: 3px $accent-border-color;
+    border-bottom: 0 $accent-border-color;
 }
 
 .row2 {
     padding: 25px;
-    border-bottom: 3px $accent-border-color;
     border-top: 3px $accent-border-color;
     border-right: 3px $accent-border-color;
 }
 
 .row2-3 {
     padding: 25px;
-    border-bottom: 3px $accent-border-color;
+    border-top: 3px $accent-border-color;
 }
 
 .row3 {
@@ -43,4 +51,10 @@ h1 {
 .row3-3 {
     padding: 25px;
     border-top: 3px $accent-border-color;
+}
+
+#sign-out {
+    border-radius: 8px;
+    display: flex;
+    
 }

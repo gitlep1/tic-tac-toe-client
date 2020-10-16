@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>The Sign Up Page</title>
+      <link rel="stylesheet" href="./assets/styles/SignUp.css">
+    </head>
+    <body>
+      <h1>Tic-Tac-Toe account creation</h1>
+      <form id="sign-up" class="border">
+        <fieldset>
+          <legend>Sign up</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+          <input type="submit" value="Sign up!">
+        </fieldset>
+      </form>
+    
+      <form id="sign-in" class="border">
+        <fieldset>
+          <legend>Sign in</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" value="Sign in!">
+        </fieldset>
+      </form>
+    
+      <form id="change-password" class="border">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" value="Change Password">
+        </fieldset>
+      </form>
+      <button>
+      <a href="http://localhost:7165/" target="_blank">Play Here!</a>
+    </button>
+    </body>
+  </html>
