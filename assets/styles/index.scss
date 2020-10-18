@@ -26,6 +26,7 @@ body {
     align-items: center;
     border-right: 1px solid red;
     border-bottom: 1px solid red;
+    color: white;
   
     &:nth-child(3n) {
         border-right: 0;
@@ -39,12 +40,16 @@ body {
     font-size: 15vh;
 
     &:hover {
-        background-color: red;
+        background-image: url('https://i.giphy.com/media/4uEdsl76ytnVu/giphy.webp');
+        background-size: cover;
       }
+
+      user-select: none;
 }
 
 p {
     color: $api-colors;
+    text-align: center;
 }
 
 #sign-up {
@@ -53,6 +58,11 @@ p {
 
 #sign-in {
     color: $api-colors;
+}
+
+#sign-out {
+    border-radius: 8px;
+    display: flex;
 }
 
 #change-password {
@@ -76,8 +86,13 @@ h1 {
     text-align: center;
 }
 
-
-#sign-out {
-    border-radius: 8px;
+button {
     display: flex;
+    text-align: center;
+    margin: 25px;
+}
+
+#newGame {
+    border-radius: 15px;
+    border: 3px solid red;
 }

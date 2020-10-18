@@ -45,5 +45,5 @@ module.exports = {
   signUp,
   signIn,
   signOut,
-  passwordChange
+  passwordChange: passwordChange,
 }
