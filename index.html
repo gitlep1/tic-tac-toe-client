@@ -39,9 +39,12 @@
           <input type="submit" value="Change Password">
         </fieldset>
       </form>
-      <button id="sign-out">Sign Out</button>
       <p id='message'></p>
-      <h1>Tic-Tac-Toe</h1>
+      <form id="sign-out">
+        <input type="submit" value="Sign Out">
+      </form>
+      <h1 id='gameTitle'>Tic-Tac-Toe</h1>
+      <h1 id='welcome'>Welcome to Tic-Tac-Toe <br> sign in to play</h1>
         <section class='container'>
      
         <div class='row board h-100'>
@@ -58,9 +61,10 @@
         <div class='col-4 box'></div>
         <div class='col-4 box'></div>
       </div>
+      <p id='gameMessage'></p>
     </section>
-      <a href="http://localhost:7165/">
-        <button id="newGame">New Game</button>
-      </a>
+    <form id="new-game">
+        <input type="submit" value="New Game">
+    </form>
     </body>
 </html>

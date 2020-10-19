@@ -10,6 +10,26 @@ body {
     margin: auto;
 }
 
+h1 {
+    &#gameTitle {
+   text-align: center;
+   margin: 50px 0 75px 0;
+   color: $text-color;
+    }
+
+    &#welcome {
+    text-align: center;
+    margin: 50px 0 75px 0;
+    color: $text-color;
+   }
+}
+
+p {
+    color: $api-colors;
+    text-align: center;
+}
+
+
 .container {
     height: 100vh;
 }
@@ -40,15 +60,23 @@ body {
     font-size: 15vh;
 
     &:hover {
-        background-image: url('https://i.giphy.com/media/4uEdsl76ytnVu/giphy.webp');
+         background-image: url('https://www.artiestick.com/toons/alphabet/ralph/arg-x-50-trans.gif');
+        // background-image: url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif');
         background-size: cover;
+        background-position: center;
       }
 
       user-select: none;
 }
 
-p {
-    color: $api-colors;
+.border {
+    border: 3px $accent-border-color;
+    margin: 20px;
+    padding: 20px;
+}
+
+.row {
+    justify-content: center;
     text-align: center;
 }
 
@@ -61,38 +89,13 @@ p {
 }
 
 #sign-out {
-    border-radius: 8px;
-    display: flex;
+    text-align: center;
 }
 
 #change-password {
     color: $api-colors;
 }
 
-.border {
-    border: 3px $accent-border-color;
-    margin: 20px;
-    padding: 20px;
-}
-
-h1 {
-   text-align: center;
-   margin: 50px 0 75px 0;
-   color: $text-color;
-}
-
-.row {
-    justify-content: center;
+#new-game {
     text-align: center;
-}
-
-button {
-    display: flex;
-    text-align: center;
-    margin: 25px;
-}
-
-#newGame {
-    border-radius: 15px;
-    border: 3px solid red;
 }
