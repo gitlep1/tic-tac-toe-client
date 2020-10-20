@@ -34,7 +34,8 @@ const signOutSuccess =  (response) => {
     $('#sign-in').show()
     $('.container').hide()
     $('h1#gameTitle').hide()
-  $('h1#welcome').show()
+    $('h1#welcome').show()
+    window.location.reload();
 }
   
 const signOutFailure =  () => {

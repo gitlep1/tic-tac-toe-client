@@ -1,9 +1,25 @@
 const ui = require('./ui')
 const api = require('./api')
+const store = require('../store')
 
 const onNewGame = (event) => {
   event.preventDefault()
 
+  // reset your game variables
+  store.cells = ["", "", "", "", "", "", "", "", ""]
+  store.gameActive = true
+  store.i = 0
+  store.player1 = 'X'
+  store.player2 = 'O'
+  store.currentPlayer = 'X'
+
+  // clear the board
+  $('.box').text('')
+  
+  // set the message back to player 1
+  $('#gameMessage').text("It is: player1's turn")
+
+  // create new game with API
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
@@ -11,7 +27,7 @@ const onNewGame = (event) => {
 
 $(() => {
   let gameActive = true
-  const cells = ["", "", "", "", "", "", "", "", ""]
+  let cells = ["", "", "", "", "", "", "", "", ""]
   let player1 = 'X'
   let player2 = 'O'
   let currentPlayer = player1
@@ -46,9 +62,25 @@ $(() => {
       gameActive = false
       $('#gameMessage').text('Game is over!')
     }
+    console.log(cells)
+    // if (gameActive === false) {
+    //   cells[0] = $('#cell1')
+    //   cells[1] = $('#cell2')
+    //   console.log(cells[0])
+    //   console.log(cells[1])
+    //   console.log('1st if gameactive')
+
+    //   if (cells[0] === 'X' && cells[1] === 'O') {
+    //     console.log('3rd if gameactive')
+    //     $('#gameMessage').text('player 1 won!')
+    //   }
+    // }
   }
+      // console.log(cells)
 
   $('.box').on('click', onBoxClick)
+
+  $('#new-game').on('submit', onNewGame)
 })
 
 // change background image after every click (do later on)
@@ -56,8 +88,6 @@ $(() => {
     // for (let i = 0; i < elements.length; i++) {
     //     elements[i].style.background=url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif');
     // }
-
-$('#gameMessage').text("It is: player1's turn")
 
 module.exports = {
   onNewGame

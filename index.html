@@ -2,46 +2,46 @@
 <html>
     <head>
       <title>Tic-Tac-Toe</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
 
       <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src='public/vendor.js' type='text/javascript' charset='utf-8' defer></script>
+      <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
     </head>
     <body>
-      <form id="sign-up" class="border">
+      <form id='sign-up' class='border'>
         <fieldset>
           <legend>Sign up</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-          <input type="submit" value="Sign up">
+          <input type='text' name='credentials[email]' placeholder='Email'>
+          <input type='password' name='credentials[password]' placeholder='Password'>
+          <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
+          <input type='submit' value='Sign up'>
         </fieldset>
       </form>
     
-      <form id="sign-in" class="border">
+      <form id='sign-in' class='border'>
         <fieldset>
           <legend>Sign in</legend>
-          <input type="text" name="credentials[email]" placeholder="Email">
-          <input type="password" name="credentials[password]" placeholder="Password">
-          <input type="submit" value="Sign in">
+          <input type='text' name='credentials[email]' placeholder='Email'>
+          <input type='password' name='credentials[password]' placeholder='Password'>
+          <input type='submit' value='Sign in'>
         </fieldset>
       </form>
     
-      <form id="change-password" class="border">
+      <form id='change-password' class='border'>
         <fieldset>
           <legend>Change Password</legend>
-          <input type="password" name="passwords[old]" placeholder="Old Password">
-          <input type="password" name="passwords[new]" placeholder="New Password">
-          <input type="submit" value="Change Password">
+          <input type='password' name='passwords[old]' placeholder='Old Password'>
+          <input type='password' name='passwords[new]' placeholder='New Password'>
+          <input type='submit' value='Change Password'>
         </fieldset>
       </form>
       <p id='message'></p>
-      <form id="sign-out">
-        <input type="submit" value="Sign Out">
+      <form id='sign-out'>
+        <input type='submit' value='Sign Out'>
       </form>
       <h1 id='gameTitle'>Tic-Tac-Toe</h1>
       <h1 id='welcome'>Welcome to Tic-Tac-Toe <br> sign in to play</h1>
@@ -49,22 +49,22 @@
      
         <div class='row board h-100'>
         
-        <div class='col-4 box'></div>
-        <div class='col-4 box'></div>
-        <div class='col-4 box'></div>
+        <div class='col-4 box' id='cell1'></div>
+        <div class='col-4 box' id='cell2'></div>
+        <div class='col-4 box' id='cell3'></div>
 
-        <div class='col-4 box'></div>
-        <div class='col-4 box'></div>
-        <div class='col-4 box'></div>
+        <div class='col-4 box' id='cell4'></div>
+        <div class='col-4 box' id='cell5'></div>
+        <div class='col-4 box' id='cell6'></div>
 
-        <div class='col-4 box'></div>
-        <div class='col-4 box'></div>
-        <div class='col-4 box'></div>
+        <div class='col-4 box' id='cell7'></div>
+        <div class='col-4 box' id='cell8'></div>
+        <div class='col-4 box' id='cell9'></div>
       </div>
       <p id='gameMessage'></p>
     </section>
-    <form id="new-game">
-        <input type="submit" value="New Game">
+    <form id='new-game'>
+        <input type='submit' value='New Game'>
     </form>
     </body>
 </html>
