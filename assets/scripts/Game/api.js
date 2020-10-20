@@ -15,6 +15,18 @@ const newGame = () => {
   })
 }
 
+const gameUpdate = () => {
+  return $.ajax({
+    method: "UPDATE",
+    data: {},
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  newGame
+  newGame,
+  gameUpdate
 }

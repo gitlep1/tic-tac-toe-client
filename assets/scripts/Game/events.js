@@ -17,12 +17,20 @@ const onNewGame = (event) => {
   $('.box').text('')
   
   // set the message back to player 1
-  $('#gameMessage').text("It is: player1's turn")
+  $('#gameMessage').text("It is now: player1's turn")
 
   // create new game with API
   api.newGame()
     .then(ui.newGameSuccess)
     .catch(ui.newGameFailure)
+}
+
+const onGameUpdate = (event) => {
+  event.preventDefault()
+
+  api.gameUpdate()
+    .then(ui.gameUpdateSuccess)
+    .catch(ui.gameUpdateFailure)
 }
 
 $(() => {
@@ -90,5 +98,6 @@ $(() => {
     // }
 
 module.exports = {
-  onNewGame
+  onNewGame,
+  onGameUpdate
 }
