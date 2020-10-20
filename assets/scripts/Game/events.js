@@ -62,7 +62,9 @@ $(() => {
       gameActive = false
       $('#gameMessage').text('Game is over!')
     }
-    console.log(cells)
+    console.log('cells 2', cells)
+    
+    //console.log(cells)
     // if (gameActive === false) {
     //   cells[0] = $('#cell1')
     //   cells[1] = $('#cell2')
@@ -76,7 +78,6 @@ $(() => {
     //   }
     // }
   }
-      // console.log(cells)
 
   $('.box').on('click', onBoxClick)
 
