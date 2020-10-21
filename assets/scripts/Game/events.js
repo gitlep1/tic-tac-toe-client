@@ -1,7 +1,7 @@
 const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
-const { currentPlayer } = require('../store')
+const { player1, gameActive, currentPlayer } = require('../store')
 
 const onNewGame = (event) => {
   event.preventDefault()
@@ -45,12 +45,15 @@ const onGameUpdate = (event) => {
       console.log(store.cells[store.i])
       store.i++
 
+      // check the api
       api.gameUpdate(boxIndex, store.currentPlayer)
         .then(ui.gameUpdateSuccess)
         .catch(ui.gameUpdateFailure)
 
       // change turn
       store.currentPlayer = store.currentPlayer === store.player2 ? store.player1 : store.player2
+      console.log('this is player 1 ' + store.player1)
+      console.log('this is player 2 ' + store.player2)
 
       // display turn
       if (store.currentPlayer === store.player1) {
@@ -59,25 +62,28 @@ const onGameUpdate = (event) => {
           $('#gameMessage').text("It is now: player2's turn")
       }
     }
+    console.log('gameActive value is: ' + store.gameActive)
     if (store.cells[store.i] !== '') {
       store.gameActive = false
       $('#gameMessage').text('Game is over!')
     }
+      // TO DO
     // if (store.gameActive === false) {
-    //   store.cells[0] = $('#cell1')
-    //   store.cells[1] = $('#cell2')
-    //   store.cells[2] = $('#cell3')
+    //   store.cells[0] = store.currentPlayer
+    //   store.cells[1] = store.currentPlayer
+    //   store.cells[2] = store.currentPlayer
     //   console.log(store.cells[0])
     //   console.log(store.cells[1])
     //   console.log(store.cells[2])
     //   console.log('1st if gameactive')
 
-    // } else if (store.cells[0] === 'X' && store.cells[1] === 'O' && store.cells[2] === 'X') {
+    // } else if (store.cells[0] === 'X' && store.cells[1] === 'X' && store.cells[2] === 'X') {
     //     console.log('2nd if gameactive')
     //     $('#gameMessage').text('player 1 won!')
     // }
   }
 
+    // TO DO
 // change background image after every click (do later on)
     // let elements = document.getElementsByClassName(".box")
     // for (let i = 0; i < elements.length; i++) {

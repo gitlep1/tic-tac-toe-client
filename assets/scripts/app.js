@@ -13,7 +13,8 @@ require('./User/ui')
 const gameEvents = require('./Game/events')
 require('./Game/api')
 require('./Game/ui')
-const store = require('./store')
+const store = require('./store');
+const { currentPlayer } = require('./store');
 
 $(() => {
   $('#sign-up').on('submit', userEvents.onSignUp)
@@ -27,4 +28,7 @@ $(() => {
   $('.container').hide()
   $('h1#gameTitle').hide()
   $('.box').on('click', gameEvents.onGameUpdate)
+  // if (store.currentPlayer === 'player2') {
+  //   $('box2').on('hover', style.background=url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif'))
+  // }
 })

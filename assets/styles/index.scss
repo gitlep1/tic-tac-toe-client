@@ -47,27 +47,38 @@ p {
     border-right: 1px solid red;
     border-bottom: 1px solid red;
     color: white;
-  
+    
+    // selects all the 3rd children
     &:nth-child(3n) {
         border-right: 0;
     }
-  
+    
     &:nth-last-child(-n+3) {
         border-bottom: 0;
     }
 
+    // vh = vertical height
     min-height: calc(100% / 3);
     font-size: 15vh;
 
     &:hover {
         background-image: url('https://www.artiestick.com/toons/alphabet/ralph/arg-x-50-trans.gif');
-        // background-image: url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif');
         background-size: cover;
         background-position: center;
       }
 
+      // makes it so the user can't select the text in the background
       user-select: none;
+
 }
+
+.box2 {
+    background-image: url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif');
+    background-size: cover;
+    background-position: center;
+    user-select: none;
+}
+
 
 .border {
     border: 3px $accent-border-color;
