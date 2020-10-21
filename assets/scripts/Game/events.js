@@ -1,11 +1,13 @@
 const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
+const { currentPlayer } = require('../store')
 
 const onNewGame = (event) => {
   event.preventDefault()
+  
 
-  // reset your game variables
+  // reset game variables
   store.cells = ["", "", "", "", "", "", "", "", ""]
   store.gameActive = true
   store.i = 0
@@ -17,7 +19,7 @@ const onNewGame = (event) => {
   $('.box').text('')
   
   // set the message back to player 1
-  $('#gameMessage').text("It is: player1's turn")
+  $('#gameMessage').text("It is now: player1's turn")
 
   // create new game with API
   api.newGame()
@@ -25,64 +27,56 @@ const onNewGame = (event) => {
     .catch(ui.newGameFailure)
 }
 
-$(() => {
-  let gameActive = true
-  let cells = ["", "", "", "", "", "", "", "", ""]
-  let player1 = 'X'
-  let player2 = 'O'
-  let currentPlayer = player1
-  let i = 0
-
-  const onBoxClick = (event) => {
-
-    const box = $(event.target)
-   
+const onGameUpdate = (event) => {
+  event.preventDefault()
+  const box = event.target
+  const boxIndex = $(box).data('cell-index')
+  
     // if the box is empty then valid move
-    if ( box.text() === '') {
+    if ($(box).text() === '') {
 
       // add player to board
-      box.css('background', 'transparent')
-      box.text(currentPlayer)
+      $(box).css('background', 'transparent')
+      $(box).text(store.currentPlayer)
 
       // add player to game array
-      cells[i] = currentPlayer
-      i++
+      store.cells[store.i] = store.currentPlayer
+      console.log(store.cells)
+      console.log(store.cells[store.i])
+      store.i++
+
+      api.gameUpdate(boxIndex, store.currentPlayer)
+        .then(ui.gameUpdateSuccess)
+        .catch(ui.gameUpdateFailure)
 
       // change turn
-      currentPlayer = currentPlayer === player2 ? player1 : player2
+      store.currentPlayer = store.currentPlayer === store.player2 ? store.player1 : store.player2
 
       // display turn
-      if (currentPlayer === player1) {
-          $('#gameMessage').text("It is: player1's turn")
-      } else if (currentPlayer === player2) {
-          $('#gameMessage').text("It is: player2's turn")
+      if (store.currentPlayer === store.player1) {
+          $('#gameMessage').text("It is now: player1's turn")
+      } else if (store.currentPlayer === store.player2) {
+          $('#gameMessage').text("It is now: player2's turn")
       }
     }
-    if (cells[i] !== '') {
-      gameActive = false
+    if (store.cells[store.i] !== '') {
+      store.gameActive = false
       $('#gameMessage').text('Game is over!')
     }
-    console.log('cells 2', cells)
-    
-    //console.log(cells)
-    // if (gameActive === false) {
-    //   cells[0] = $('#cell1')
-    //   cells[1] = $('#cell2')
-    //   console.log(cells[0])
-    //   console.log(cells[1])
+    // if (store.gameActive === false) {
+    //   store.cells[0] = $('#cell1')
+    //   store.cells[1] = $('#cell2')
+    //   store.cells[2] = $('#cell3')
+    //   console.log(store.cells[0])
+    //   console.log(store.cells[1])
+    //   console.log(store.cells[2])
     //   console.log('1st if gameactive')
 
-    //   if (cells[0] === 'X' && cells[1] === 'O') {
-    //     console.log('3rd if gameactive')
+    // } else if (store.cells[0] === 'X' && store.cells[1] === 'O' && store.cells[2] === 'X') {
+    //     console.log('2nd if gameactive')
     //     $('#gameMessage').text('player 1 won!')
-    //   }
     // }
   }
-
-  $('.box').on('click', onBoxClick)
-
-  $('#new-game').on('submit', onNewGame)
-})
 
 // change background image after every click (do later on)
     // let elements = document.getElementsByClassName(".box")
@@ -91,5 +85,6 @@ $(() => {
     // }
 
 module.exports = {
-  onNewGame
+  onNewGame,
+  onGameUpdate
 }

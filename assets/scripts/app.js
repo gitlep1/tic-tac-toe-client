@@ -13,6 +13,7 @@ require('./User/ui')
 const gameEvents = require('./Game/events')
 require('./Game/api')
 require('./Game/ui')
+const store = require('./store')
 
 $(() => {
   $('#sign-up').on('submit', userEvents.onSignUp)
@@ -25,4 +26,5 @@ $(() => {
   $('#new-game').hide()
   $('.container').hide()
   $('h1#gameTitle').hide()
+  $('.box').on('click', gameEvents.onGameUpdate)
 })
