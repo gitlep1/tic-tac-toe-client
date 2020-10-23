@@ -17,7 +17,6 @@ LIST OF TECHNOLOGIES USED
 * the buttons
 * the borders
 
-
   SCSS
 * styling the title
 * styling the forms 
@@ -25,7 +24,6 @@ LIST OF TECHNOLOGIES USED
 * styling the board 
 * styling the background
 * making the game board
-
 
   JAVASCRIPT
 * controlling the API stuff
