@@ -56,8 +56,13 @@ After I organized everything I got to work starting with the HTML then doing the
   USER STORIES
   
   As a developer i want to make sure my game has no errors or game breaking bugs that affert he users experience
+  
   As a user i want to play this game without any issues and i want it to save my games
+  
   As a tester i want to test this game for bugs and help the developer
+  
   As a user i want to play this game at any time of the day
+  
   As a developer i want users to login to their account with any issues
+  
   
