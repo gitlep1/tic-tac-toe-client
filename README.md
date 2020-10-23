@@ -10,12 +10,12 @@ LIST OF TECHNOLOGIES USED
   To plan out how to make this Tic-Tac-Toe game I came up with a wireframe diagram so that I would know exactly how I      wanted my website to look. After that I took the time to plan out which section of the code would do what:
   
   HTML                                    
- the title
- the form fields
- the boxes
- the messages
- the buttons
- the borders
+the title
+the form fields
+the boxes
+the messages
+the buttons
+the borders
  
  SCSS                         
 styling the title
