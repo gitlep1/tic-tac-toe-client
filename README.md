@@ -17,7 +17,7 @@ LIST OF TECHNOLOGIES USED
  the buttons
  the borders
  
- SCSS
+ SCSS                         
 styling the title
 styling the forms 
 styling the hover image (dancing X & O)
@@ -26,7 +26,7 @@ styling the background
 making the game board
 
 
-  JAVASCRIPT
+  JAVASCRIPT                        
 controlling the API stuff
 putting the player on the board
 hiding unnecessary information
