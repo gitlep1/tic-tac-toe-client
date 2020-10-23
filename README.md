@@ -16,8 +16,8 @@ LIST OF TECHNOLOGIES USED
 * the messages
 * the buttons
 * the borders
- 
- SCSS
+
+  SCSS
 * styling the title
 * styling the forms 
 * styling the hover image (dancing X & O)
