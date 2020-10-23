@@ -17,6 +17,7 @@ LIST OF TECHNOLOGIES USED
 * the buttons
 * the borders
 
+
   SCSS
 * styling the title
 * styling the forms 
