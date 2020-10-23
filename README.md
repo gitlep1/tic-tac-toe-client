@@ -9,7 +9,8 @@ LIST OF TECHNOLOGIES USED
   
   To plan out how to make this Tic-Tac-Toe game I came up with a wireframe diagram so that I would know exactly how I      wanted my website to look. After that I took the time to plan out which section of the code would do what:
   
-  HTML                                    
+  HTML            
+  
 the title
 the form fields
 the boxes
@@ -17,7 +18,8 @@ the messages
 the buttons
 the borders
  
- SCSS                         
+ SCSS        
+ 
 styling the title
 styling the forms 
 styling the hover image (dancing X & O)
@@ -26,7 +28,8 @@ styling the background
 making the game board
 
 
-  JAVASCRIPT                        
+  JAVASCRIPT      
+  
 controlling the API stuff
 putting the player on the board
 hiding unnecessary information
