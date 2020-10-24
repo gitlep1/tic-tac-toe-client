@@ -49,10 +49,19 @@ const onPasswordChange = (event) => {
     .catch(ui.passwordChangeFailure)
 }
 
+const onViewGames = (event) => {
+  event.preventDefault()
+
+  api.viewGames(index, player)
+    .then(ui.viewGamesSuccess)
+    .catch(ui.viewGamesFailure)
+}
+
 
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onPasswordChange
+  onPasswordChange,
+  onViewGames
 }

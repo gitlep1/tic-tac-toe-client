@@ -19,31 +19,43 @@ const signIn = (data) => {
   })
 }
 
-const signOut = data => {
-    return $.ajax({
-        method: "DELETE",
-        data: data,
-        url: config.apiUrl + '/sign-out',
-        headers: {
-            Authorization: 'Bearer ' + store.user.token
-        }
-    })
-  }
+const signOut = (data) => {
+  return $.ajax({
+    method: "DELETE",
+    data: data,
+    url: config.apiUrl + '/sign-out',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
 
-const passwordChange = data => {
-    return $.ajax({
-        method: "PATCH",
-        data: data,
-        url: config.apiUrl + '/change-password',
-        headers: {
-            Authorization: 'Bearer ' + store.user.token
-        }
-    })
+const passwordChange = (data) => {
+  return $.ajax({
+    method: "PATCH",
+    data: data,
+    url: config.apiUrl + '/change-password',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const viewGames = (index, player) => {
+  return $.ajax({
+    method: "GET",
+    data: data,
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
 }
 
 module.exports = {
   signUp,
   signIn,
   signOut,
-  passwordChange
+  passwordChange,
+  viewGames
 }

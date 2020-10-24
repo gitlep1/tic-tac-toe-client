@@ -35,6 +35,7 @@ const gameUpdate = (index, player) => {
   })
 }
 
+
 module.exports = {
   newGame,
   gameUpdate

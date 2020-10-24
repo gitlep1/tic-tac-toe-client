@@ -1,4 +1,5 @@
 'use strict'
+
 const store = require('../store')
 
 const newGameSuccess =  (response)  => {
@@ -12,7 +13,6 @@ const newGameFailure =  () => {
 }
 
 const gameUpdateSuccess =  (response)  => {
-  $('#message').text('Game has been updated')
   $('.container').show()
 
   // let elements = document.getElementsByClassName(".box")
@@ -22,7 +22,6 @@ const gameUpdateSuccess =  (response)  => {
 }
 
 const gameUpdateFailure =  () => {
-  $('#message').text('Game has failed to update')
 }
 
 module.exports = {

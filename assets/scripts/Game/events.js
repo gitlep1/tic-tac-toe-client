@@ -1,7 +1,9 @@
+'use strict'
+
 const ui = require('./ui')
 const api = require('./api')
 const store = require('../store')
-const { player1, gameActive, currentPlayer } = require('../store')
+const { player1, gameActive, currentPlayer, cells } = require('../store')
 
 const onNewGame = (event) => {
   event.preventDefault()
@@ -63,32 +65,55 @@ const onGameUpdate = (event) => {
       }
     }
     console.log('gameActive value is: ' + store.gameActive)
+    // checking if the cells[i] (the boxes) are NOT empty if they are empty end the game otherwise keep continuing
     if (store.cells[store.i] !== '') {
       store.gameActive = false
-      $('#gameMessage').text('Game is over!')
+      $('#gameMessage').text('Game is a tie!')
+    } else {
+      // setting the cells indexed to i to the current player
+      store.cells[store.i] = store.currentPlayer
     }
-      // TO DO
-    // if (store.gameActive === false) {
-    //   store.cells[0] = store.currentPlayer
-    //   store.cells[1] = store.currentPlayer
-    //   store.cells[2] = store.currentPlayer
-    //   console.log(store.cells[0])
-    //   console.log(store.cells[1])
-    //   console.log(store.cells[2])
-    //   console.log('1st if gameactive')
+    // store.cells[0] = $(box).data('cell-index')
+    // console.log('this is the 0th ele of the cells array: ', store.cells[0])
+    // console.log('this is the boxIndex value: ', boxIndex)
+    // console.log('this is the boxIndex value 0th ele: ', boxIndex[0])
 
-    // } else if (store.cells[0] === 'X' && store.cells[1] === 'X' && store.cells[2] === 'X') {
-    //     console.log('2nd if gameactive')
-    //     $('#gameMessage').text('player 1 won!')
-    // }
+    console.log(boxIndex)
+    if (
+      boxIndex === store.cells[0]
+      ) {
+        store.cells[0] = store.currentPlayer
+      console.log('2nd if statement ' + store.player1 + ' is the value')
+      store.gameActive = false
+      $('#gameMessage').text('Player 1 wins!')
+    }
   }
+    //   // TO DO
+      // console.log('this is player1 value: ', store.player1)
+      // store.cells[0] = store.player1
+      // store.cells[1] = store.player1
+      // store.cells[2] = store.player1
+
+      // store.cells[3] = store.player1
+      // store.cells[4] = store.player1
+      // store.cells[5] = store.player1
+
+      // store.cells[6] = store.player1
+      // store.cells[7] = store.player1
+      // store.cells[8] = store.player1
+      // if (store.cells[0] === store.player1) {
+      // console.log('1st if gameactive')
+      // store.gameActive = false
+      // $('#gameMessage').text('player 1 won!')
+      //}
+
 
     // TO DO
-// change background image after every click (do later on)
-    // let elements = document.getElementsByClassName(".box")
-    // for (let i = 0; i < elements.length; i++) {
-    //     elements[i].style.background=url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif');
-    // }
+      // change background image after every click (do later on)
+      // let elements = document.getElementsByClassName(".box")
+      // for (let i = 0; i < elements.length; i++) {
+      //     elements[i].style.background=url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif');
+      // }
 
 module.exports = {
   onNewGame,
