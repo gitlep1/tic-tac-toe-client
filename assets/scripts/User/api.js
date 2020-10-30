@@ -44,7 +44,7 @@ const passwordChange = (data) => {
 const viewGames = (index, player) => {
   return $.ajax({
     method: "GET",
-    data: data,
+    data: [],
     url: config.apiUrl + '/games',
     headers: {
       Authorization: 'Bearer ' + store.user.token

@@ -14,8 +14,8 @@ const signUpFailure =  () => {
 const signInSuccess =  (response) => {
   // [0].reset() clears that form
   $('#sign-in')[0].reset()
-  $('#message').text('You have been successfully signed in ' + response.user.email)
   store.user = response.user
+  $('#message').text('You have been successfully signed in ' + response.user.email)
   $('#change-password').show()
   $('#sign-out').show()
   $('#new-game').show()
@@ -23,7 +23,6 @@ const signInSuccess =  (response) => {
   $('#sign-in').hide()
   $('h1#gameTitle').show()
   $('h1#welcome').hide()
-  $('#numberOfGames').text(response.user.games).show()
 }
 
 const signInFailure =  () => {
@@ -57,11 +56,12 @@ const passwordChangeFailure =  () => {
 }
 
 const viewGamesSuccess = (response) => {
-  $('#message').text('This is how many games you have played')
+  $('#viewGamesMessage').text('This is how many games you have played:')
+  
 }
 
 const viewGamesFailure = (response) => {
-  $('#message').text('You have failed to view your games')
+  $('#viewGamesMessage').text('You have failed to view your games')
 }
 
 

@@ -31,10 +31,15 @@ const onNewGame = (event) => {
 
 const onGameUpdate = (event) => {
   event.preventDefault()
-  const box = event.target
-  const boxIndex = $(box).data('cell-index')
   
-    // if the box is empty then valid move
+  // this gets the HTML element of the box that was clicked on
+  const box = event.target
+
+   // this gets that HTML element's `data-cell-index` attribute value (which represents the index)
+  const boxIndex = $(box).data('cell-index')
+  console.log('boxIndex is', boxIndex)
+  
+     // if the box is empty then valid move
     if ($(box).text() === '') {
 
       // add player to board
@@ -44,7 +49,7 @@ const onGameUpdate = (event) => {
       // add player to game array
       store.cells[store.i] = store.currentPlayer
       console.log(store.cells)
-      console.log(store.cells[store.i])
+      console.log('current player is:', store.cells[store.i])
       store.i++
 
       // check the api
@@ -54,8 +59,6 @@ const onGameUpdate = (event) => {
 
       // change turn
       store.currentPlayer = store.currentPlayer === store.player2 ? store.player1 : store.player2
-      console.log('this is player 1 ' + store.player1)
-      console.log('this is player 2 ' + store.player2)
 
       // display turn
       if (store.currentPlayer === store.player1) {
@@ -64,8 +67,8 @@ const onGameUpdate = (event) => {
           $('#gameMessage').text("It is now: player2's turn")
       }
     }
-    console.log('gameActive value is: ' + store.gameActive)
-    // checking if the cells[i] (the boxes) are NOT empty if they are empty end the game otherwise keep continuing
+    // checking if the cells[i] (the boxes) are NOT empty 
+    // if they are empty end the game otherwise keep continuing
     if (store.cells[store.i] !== '') {
       store.gameActive = false
       $('#gameMessage').text('Game is a tie!')
@@ -73,47 +76,29 @@ const onGameUpdate = (event) => {
       // setting the cells indexed to i to the current player
       store.cells[store.i] = store.currentPlayer
     }
-    // store.cells[0] = $(box).data('cell-index')
-    // console.log('this is the 0th ele of the cells array: ', store.cells[0])
-    // console.log('this is the boxIndex value: ', boxIndex)
-    // console.log('this is the boxIndex value 0th ele: ', boxIndex[0])
-
-    console.log(boxIndex)
+          // win condition \\
     if (
-      boxIndex === store.cells[0]
-      ) {
-        store.cells[0] = store.currentPlayer
-      console.log('2nd if statement ' + store.player1 + ' is the value')
-      store.gameActive = false
+      store.cells[0] !== '' && 
+      store.cells[0] === store.cells[1] &&
+      store.cells[1] !=='' &&
+      store.cells[1] === store.cells[2] &&
+      store.cells[2] !== '' &&
+      store.cells[2] === store.cells[1]) {
       $('#gameMessage').text('Player 1 wins!')
+    } else if (
+      store.cells[3] === 'X' &&
+      store.cells[4] === 'X' &&
+      store.cells[5] === 'X') {
+      $('#gameMessage').text('Player 1 wins!')
+    } else if (
+      store.cells[6] === 'X' &&
+      store.cells[7] === 'X' &&
+      store.cells[8] === 'X') {
+      $('#gameMessage').text('Player 1 wins!')
+    } else {
+      console.log('never entered win condition')
     }
   }
-    //   // TO DO
-      // console.log('this is player1 value: ', store.player1)
-      // store.cells[0] = store.player1
-      // store.cells[1] = store.player1
-      // store.cells[2] = store.player1
-
-      // store.cells[3] = store.player1
-      // store.cells[4] = store.player1
-      // store.cells[5] = store.player1
-
-      // store.cells[6] = store.player1
-      // store.cells[7] = store.player1
-      // store.cells[8] = store.player1
-      // if (store.cells[0] === store.player1) {
-      // console.log('1st if gameactive')
-      // store.gameActive = false
-      // $('#gameMessage').text('player 1 won!')
-      //}
-
-
-    // TO DO
-      // change background image after every click (do later on)
-      // let elements = document.getElementsByClassName(".box")
-      // for (let i = 0; i < elements.length; i++) {
-      //     elements[i].style.background=url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif');
-      // }
 
 module.exports = {
   onNewGame,

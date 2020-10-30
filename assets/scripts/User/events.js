@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 const api = require('./api')
+const store = require('../store')
 
 const onSignUp = (event) => {
   event.preventDefault()
@@ -52,9 +53,14 @@ const onPasswordChange = (event) => {
 const onViewGames = (event) => {
   event.preventDefault()
 
-  api.viewGames(index, player)
+  const box = event.target
+  const boxIndex = $(box).data('cell-index')
+
+  api.viewGames(boxIndex, store.currentPlayer)
     .then(ui.viewGamesSuccess)
     .catch(ui.viewGamesFailure)
+
+  return $('.viewGames').data([])
 }
 
 
