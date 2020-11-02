@@ -14,11 +14,28 @@ const newGameFailure =  () => {
 
 const gameUpdateSuccess =  (response)  => {
   $('.container').show()
-
-  // let elements = document.getElementsByClassName(".box")
-  //   for (let i = 0; i < elements.length; i++) {
-  //       elements[i].style.background=url('https://www.artiestick.com/gifs/arg-o-5O-tr.gif');
-   // }
+  store.game = store.response.game
+//   if (
+//     store.game.cells[0] !== '' && 
+//     store.game.cells[0] === store.game.cells[1] &&
+//     store.game.cells[1] !=='' &&
+//     store.game.cells[1] === store.game.cells[2] &&
+//     store.game.cells[2] !== '' &&
+//     store.game.cells[2] === store.game.cells[1]) {
+//     $('#gameMessage').text('Player 1 wins!')
+//   } else if (
+//     store.cells[3] === 'X' &&
+//     store.cells[4] === 'X' &&
+//     store.cells[5] === 'X') {
+//     $('#gameMessage').text('Player 1 wins!')
+//   } else if (
+//     store.cells[6] === 'X' &&
+//     store.cells[7] === 'X' &&
+//     store.cells[8] === 'X') {
+//     $('#gameMessage').text('Player 1 wins!')
+//   } else {
+//     console.log('never entered win condition')
+//   }
 }
 
 const gameUpdateFailure =  () => {

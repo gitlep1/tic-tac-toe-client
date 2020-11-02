@@ -78,12 +78,12 @@ const onGameUpdate = (event) => {
     }
           // win condition \\
     if (
-      store.cells[0] !== '' && 
-      store.cells[0] === store.cells[1] &&
-      store.cells[1] !=='' &&
-      store.cells[1] === store.cells[2] &&
-      store.cells[2] !== '' &&
-      store.cells[2] === store.cells[1]) {
+      store.game.cells[0] !== '' && 
+      store.game.cells[0] === store.game.cells[1] &&
+      store.game.cells[1] !=='' &&
+      store.game.cells[1] === store.game.cells[2] &&
+      store.game.cells[2] !== '' &&
+      store.game.cells[2] === store.game.cells[1]) {
       $('#gameMessage').text('Player 1 wins!')
     } else if (
       store.cells[3] === 'X' &&
@@ -97,8 +97,8 @@ const onGameUpdate = (event) => {
       $('#gameMessage').text('Player 1 wins!')
     } else {
       console.log('never entered win condition')
-    }
   }
+}
 
 module.exports = {
   onNewGame,
