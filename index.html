@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic-Tac-Toe</title>
+      <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+      <!-- Do not add `link` tags-->
+      <link rel='shortcut icon' type='image/x-icon' href='favicon.ico'>
+
+      <!-- Do not add `script` tags-->
+      <script src='public/vendor.js' type='text/javascript' charset='utf-8' defer></script>
+      <script src='public/application.js' type='text/javascript' charset='utf-8' defer></script>
+    </head>
+    <body>
+      <form id='sign-up' class='border'>
+        <fieldset>
+          <legend>Sign up</legend>
+          <input type='text' name='credentials[email]' placeholder='Email'>
+          <input type='password' name='credentials[password]' placeholder='Password'>
+          <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
+          <input type='submit' value='Sign up'>
+        </fieldset>
+      </form>
+    
+      <form id='sign-in' class='border'>
+        <fieldset>
+          <legend>Sign in</legend>
+          <input type='text' name='credentials[email]' placeholder='Email'>
+          <input type='password' name='credentials[password]' placeholder='Password'>
+          <input type='submit' value='Sign in'>
+        </fieldset>
+      </form>
+    
+      <form id='change-password' class='border'>
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type='password' name='passwords[old]' placeholder='Old Password'>
+          <input type='password' name='passwords[new]' placeholder='New Password'>
+          <input type='submit' value='Change Password'>
+        </fieldset>
+      </form>
+      <p id='message'></p>
+      <form id='sign-out'>
+        <input type='submit' value='Sign Out'>
+      </form>
+      <h1 id='gameTitle'>Tic-Tac-Toe</h1>
+      <h1 id='welcome'>Welcome to Tic-Tac-Toe <br> sign in to play</h1>
+        <section class='container' id='game-update'>
+     
+        <div class='row board h-100'>
+        
+        <div class='col-4 box' class='box2' 
+        data-cell-index='0'></div>
+        <div class='col-4 box' class='box2'
+        data-cell-index='1'></div>
+        <div class='col-4 box' class='box2'
+        data-cell-index='2'></div>
+
+        <div class='col-4 box' class='box2'
+        data-cell-index='3'></div>
+        <div class='col-4 box' class='box2'
+        data-cell-index='4'></div>
+        <div class='col-4 box' class='box2'
+        data-cell-index='5'></div>
+
+        <div class='col-4 box' class='box2'
+        data-cell-index='6'></div>
+        <div class='col-4 box' class='box2'
+        data-cell-index='7'></div>
+        <div class='col-4 box' class='box2'
+        data-cell-index='8'></div>
+      </div>
+      <p id='gameMessage'></p>
+      <p id='viewGamesMessage'></p>
+      <form id ='numberOfGames'>
+        <input type='submit' value='View Games'>
+      </form>
+    </section>
+    <form id='new-game'>
+        <input type='submit' value='New Game'>
+    </form>
+    </body>
+</html>
