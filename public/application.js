@@ -17047,7 +17047,7 @@ var onGameUpdate = function onGameUpdate(event) {
 
   // this gets that HTML element's `data-cell-index` attribute value (which represents the index)
   var boxIndex = $(box).data('cell-index');
-  console.log('boxIndex is', boxIndex);
+  // console.log('boxIndex is', boxIndex)
 
   // if the box is empty then valid move
   if ($(box).text() === '') {
@@ -17058,8 +17058,8 @@ var onGameUpdate = function onGameUpdate(event) {
 
     // add player to game array
     store.cells[store.i] = store.currentPlayer;
-    console.log(store.cells);
-    console.log('current player is:', store.cells[store.i]);
+    // console.log(store.cells)
+    // console.log('current player is:', store.cells[store.i])
     store.i++;
 
     // check the api
@@ -17092,7 +17092,7 @@ var onGameUpdate = function onGameUpdate(event) {
   } else if (store.cells[6] === 'X' && store.cells[7] === 'X' && store.cells[8] === 'X') {
     $('#gameMessage').text('Player 1 wins!');
   } else {
-    console.log('never entered win condition');
+    // console.log('never entered win condition')
   }
 };
 
