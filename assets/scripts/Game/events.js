@@ -37,7 +37,7 @@ const onGameUpdate = (event) => {
 
    // this gets that HTML element's `data-cell-index` attribute value (which represents the index)
   const boxIndex = $(box).data('cell-index')
-  console.log('boxIndex is', boxIndex)
+  // console.log('boxIndex is', boxIndex)
   
      // if the box is empty then valid move
     if ($(box).text() === '') {
@@ -48,8 +48,8 @@ const onGameUpdate = (event) => {
 
       // add player to game array
       store.cells[store.i] = store.currentPlayer
-      console.log(store.cells)
-      console.log('current player is:', store.cells[store.i])
+      // console.log(store.cells)
+      // console.log('current player is:', store.cells[store.i])
       store.i++
 
       // check the api
@@ -96,7 +96,7 @@ const onGameUpdate = (event) => {
       store.cells[8] === 'X') {
       $('#gameMessage').text('Player 1 wins!')
     } else {
-      console.log('never entered win condition')
+      // console.log('never entered win condition')
   }
 }
 
